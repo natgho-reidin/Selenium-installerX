@@ -2,6 +2,16 @@ sudo apt-get install python-pip
 sudo apt-get install unzip
 sudo pip install -U selenium
 
+# Geckodriver not running with firefox 50.0.1, so should be install downgrade 45.0.2 version
+sudo apt-get remove firefox
+sudo apt-get install firefox=45.0.2+build1-0ubuntu1
+
+# Hold firefox version
+sudo apt-mark hold firefox
+
+# If you want to update firefox version, please uncomment bottom line
+# sudo apt-mark unhold firefox
+
 # Create all file for drivers
 mkdir /home/$USER/.seleniumdrivers
 cd /home/$USER/.seleniumdrivers
