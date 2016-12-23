@@ -1,6 +1,7 @@
 sudo apt-get install python-pip
 sudo apt-get install unzip
 sudo pip install -U selenium
+sudo apt-get install python3-selenium
 
 # Geckodriver not running with firefox 50.0.1, so should be install downgrade 45.0.2 version
 sudo apt-get remove firefox
@@ -21,6 +22,9 @@ wget https://github.com/mozilla/geckodriver/releases/download/v0.11.1/geckodrive
 tar -xvzf geckodriver-v0.11.1-linux64.tar.gz
 rm geckodriver-v0.11.1-linux64.tar.gz
 chmod +x geckodriver
+
+# Download Java selenium server...
+wget http://selenium-release.storage.googleapis.com/3.0/selenium-server-standalone-3.0.1.jar
 
 # download and configure chrome driver
 wget https://chromedriver.storage.googleapis.com/2.26/chromedriver_linux64.zip
