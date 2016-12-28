@@ -1,6 +1,8 @@
 sudo apt-get install python-pip
 sudo apt-get install unzip
 sudo pip install -U selenium
+sudo -H pip install --upgrade selenium
+sudo apt-get install python3-selenium
 
 # Install chromium browser
 sudo apt-get install chromium-browser

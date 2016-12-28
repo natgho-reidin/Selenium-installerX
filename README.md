@@ -6,6 +6,7 @@ $ sudo chmod +x seleniumInstaller64bit.sh
 
 $ ./seleniumInstaller64bit.sh
 
-# Your drivers in /opt/seleniumdrivers
+# Where is my web drivers?
+Your drivers in /opt/seleniumdrivers
 
 
