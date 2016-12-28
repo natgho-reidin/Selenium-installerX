@@ -5,3 +5,7 @@ Automatic Selenium and tools installer bash script. (for 64 bit)
 $ sudo chmod +x seleniumInstaller64bit.sh
 
 $ ./seleniumInstaller64bit.sh
+
+# Your drivers in /opt/seleniumdrivers
+
+
