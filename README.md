@@ -9,4 +9,6 @@ $ ./seleniumInstaller64bit.sh
 # Where is my web drivers?
 Your drivers in /opt/seleniumdrivers
 
+# Important note!
+Before run "sudo dpkg-reconfigure locales" and Complete your localization settings.
 
