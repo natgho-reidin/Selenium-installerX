@@ -30,6 +30,9 @@ tar -xvzf geckodriver-v0.11.1-linux32.tar.gz
 rm geckodriver-v0.11.1-linux32.tar.gz
 chmod +x geckodriver
 
+# Download Java selenium server...
+wget http://selenium-release.storage.googleapis.com/3.0/selenium-server-standalone-3.0.1.jar
+
 # download and configure chrome driver
 wget https://chromedriver.storage.googleapis.com/2.26/chromedriver_linux32.zip
 unzip chromedriver_linux32.zip
