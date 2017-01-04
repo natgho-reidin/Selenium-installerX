@@ -10,6 +10,9 @@ sudo -H pip install --upgrade selenium
 sudo apt-get install -y python-setuptools
 sudo pip3 install selenium
 sudo pip3 install --upgrade selenium
+sudo apt-get -y install xserver-xephyr
+sudo pip3 install logbook
+sudo pip3 install pymysql
 
 # Install chromium browser
 sudo apt-get install -y chromium-browser
