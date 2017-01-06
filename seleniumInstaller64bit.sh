@@ -53,7 +53,7 @@ rm chromedriver_linux64.zip
 chmod +x chromedriver
 
 # Add selenium files linux path 
-echo "export PATH=$PATH:/opt/seleniumdrivers" >> /etc/profile
+sudo sh -c "echo 'export PATH=$PATH:/opt/seleniumdrivers' >> /etc/profile"
 
 clear
 echo "Installiation Complete :) Please restart system."
