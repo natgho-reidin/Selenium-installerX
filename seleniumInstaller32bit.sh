@@ -1,3 +1,5 @@
+#!/bin/bash
+
 sudo apt-get -y update
 sudo apt-get -y upgrade
 sudo apt-get install -y python-pip
@@ -13,6 +15,7 @@ sudo pip3 install --upgrade selenium
 sudo apt-get -y install xserver-xephyr
 sudo pip3 install logbook
 sudo pip3 install pymysql
+sudo easy_install email
 
 # Install chromium browser
 sudo apt-get install -y chromium-browser
@@ -33,9 +36,10 @@ sudo apt-mark hold firefox
 # sudo apt-mark unhold firefox
 
 # Create all file for drivers and configure
-mkdir /opt/seleniumdrivers
-chmod 755 /opt/seleniumdrivers
+sudo mkdir /opt/seleniumdrivers
+sudo chmod 755 /opt/seleniumdrivers
 cd /opt/seleniumdrivers
+
 # Download and configure mozilla driver
 wget https://github.com/mozilla/geckodriver/releases/download/v0.11.1/geckodriver-v0.11.1-linux32.tar.gz --no-check-certificate
 tar -xvzf geckodriver-v0.11.1-linux32.tar.gz
