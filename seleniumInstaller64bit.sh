@@ -1,43 +1,48 @@
 #!/bin/bash
 
-sudo apt-get -y update
-sudo apt-get -y upgrade
-sudo apt-get install -y python-pip
-sudo apt-get install -y python3-pip
-sudo pip install --upgrade pip
-sudo pip3 install --upgrade pip
-sudo apt-get install -y unzip
-sudo pip install -U selenium
-sudo -H pip install --upgrade selenium
-sudo apt-get install -y python-setuptools
-sudo pip3 install selenium
-sudo pip3 install --upgrade selenium
-sudo apt-get -y install xserver-xephyr
-sudo pip3 install logbook
-sudo pip3 install pymysql
-sudo easy_install email
+if (( $EUID != 0 )); then
+    echo "Please run as root"
+    exit
+fi
+
+apt-get -y update
+apt-get -y upgrade
+apt-get install -y python-pip
+apt-get install -y python3-pip
+pip install --upgrade pip
+pip3 install --upgrade pip
+apt-get install -y unzip
+pip install -U selenium
+pip install --upgrade selenium
+apt-get install -y python-setuptools
+pip3 install selenium
+pip3 install --upgrade selenium
+apt-get -y install xserver-xephyr
+pip3 install logbook
+pip3 install pymysql
+easy_install email
 
 # Install chromium browser
-sudo apt-get install -y chromium-browser
+apt-get install -y chromium-browser
 
 # work for servers install pyvirtualdisplay module and extras...
-sudo apt-get install -y xvfb
-sudo easy_install pyvirtualdisplay
-sudo pip3 install pyvirtualdisplay
+apt-get install -y xvfb
+easy_install pyvirtualdisplay
+pip3 install pyvirtualdisplay
 
 # Geckodriver not running with firefox 50.0.1, so should be install downgrade 45.0.2 version
-sudo apt-get remove firefox
-sudo apt-get install -y firefox=45.0.2+build1-0ubuntu1
+apt-get -y remove firefox
+apt-get install -y firefox=45.0.2+build1-0ubuntu1
 
 # Hold firefox version
-sudo apt-mark hold firefox
+apt-mark hold firefox
 
 # If you want to update firefox version, please uncomment bottom line
-# sudo apt-mark unhold firefox
+# apt-mark unhold firefox
 
 # Create all file for drivers and configure
-sudo mkdir /opt/seleniumdrivers
-sudo chmod 755 /opt/seleniumdrivers
+mkdir /opt/seleniumdrivers
+chmod 755 /opt/seleniumdrivers
 cd /opt/seleniumdrivers
 
 # Download and configure mozilla driver
@@ -56,7 +61,7 @@ rm chromedriver_linux64.zip
 chmod +x chromedriver
 
 # Add selenium files linux path 
-sudo sh -c "echo 'export PATH=$PATH:/opt/seleniumdrivers' >> /etc/profile"
+sh -c "echo 'export PATH=$PATH:/opt/seleniumdrivers' >> /etc/profile"
 
 clear
 echo "Installiation Complete :) Please restart system."
